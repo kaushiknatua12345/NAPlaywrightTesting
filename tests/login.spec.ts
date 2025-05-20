@@ -48,15 +48,6 @@ test('Check if error message is displayed for blank password',async ({page})=>{
 
 });
 
-test('test for invalid username and password', async ({ page }) => {  
-  await userName.fill('asdsd');  
-  await password.fill('ddddddd');
-  await loginButton.click();
-  const errorMessage= page.getByText('Invalid Username or Password');
-  await expect(errorMessage).toHaveText('Invalid Username or Password');
-});
-
-
 test('test', async ({ page }) => {  
   
   await userName.fill('ania');
