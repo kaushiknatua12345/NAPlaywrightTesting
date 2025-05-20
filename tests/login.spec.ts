@@ -52,7 +52,8 @@ test('test for invalid username and password', async ({ page }) => {
   await userName.fill('asdsd');  
   await password.fill('ddddddd');
   await loginButton.click();
-  await page.getByText('Invalid Username or Password').click();
+  const errorMessage= page.locator('text=Invalid Username or Password');
+  await expect(errorMessage).toBeVisible();
 });
 
 
